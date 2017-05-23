@@ -10,7 +10,8 @@ namespace TubeTest
             return new Dictionary<string, HashSet<string>> {
                 { "A", new HashSet<string> {"A","D","B", "C" } },
                 { "C", new HashSet<string> {"A" } },
-                { "D", new HashSet<string> {"A","B" } },
+                { "D", new HashSet<string> {"A","B", "E" } },
+                { "E", new HashSet<string> {"D"} },
                 { "B", new HashSet<string> {"D", "A" } },
             };
         }
