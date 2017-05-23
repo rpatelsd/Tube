@@ -59,6 +59,14 @@ namespace TubeTest
             Assert.IsTrue(stations.SequenceEqual(new List<string> { "B","C", "D" }));
         }
 
+        [TestMethod]
+        public void ReturnCorrectResultFor2Hop()
+        {
+            var stations = tube.GetStationsNHopsAway("A", 2);
+
+            Assert.IsTrue(stations.SequenceEqual(new List<string> { "E" }));
+        }
+        
         [TestCleanup]
         public void CleanUp()
         {
