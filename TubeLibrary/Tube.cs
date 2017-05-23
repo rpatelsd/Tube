@@ -12,7 +12,7 @@ namespace TubeLibrary
             stations = stationReader.GetStations();
         }
 
-        public IEnumerable<string> GetStationsNHopsAway(string startStation, int hops)
+                public IEnumerable<string> GetStationsNHopsAway(string startStation, int hops)
         {
             var visited = new HashSet<string>();
             IEnumerable<string> returnList = new List<string>();
@@ -34,7 +34,6 @@ namespace TubeLibrary
 
                 if (currentDepth == (hops + 1))
                 {
-                    returnList = BuildStationList(stationDepthTracker, hops);
                     break;
                 }
 
@@ -55,8 +54,9 @@ namespace TubeLibrary
                 }
             }
 
-            return returnList;
+            return BuildStationList(stationDepthTracker, hops);
         }
+
         
         private IEnumerable<string> BuildStationList(IDictionary<int, HashSet<string>> depthTracker, int hops)
         {
